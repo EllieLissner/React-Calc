@@ -38,9 +38,7 @@ export default class Calculator extends Component {
     //       this.setState({ num2: e.target.value})
     //   }
 
-      calculate = ( num1, num2) => {
-         
-           
+      calculate = ( num1, num2) => {  
           let int1 = Number(num1)
           let int2 = Number(num2)
           let result = 0
@@ -86,7 +84,7 @@ export default class Calculator extends Component {
                             placeholder="Enter your second number"
                             value={this.state.num2}
                             onChange={(e) => this.setNum(e, 'num2')} />
-                        <button type="button" onClick={this.calculate}>=</button>
+                        <button type="button" onClick={() => this.calculate(this.state.num1, this.state.num2)}>=</button>
                         <h3>Addition results go here!</h3>
                         <p>{this.state.result}</p>
                         <button type="button" name='plus' vlaue='+' onClick={(e) => this.setOp(e)}>+</button>
